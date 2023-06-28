@@ -2,6 +2,10 @@
 
 #include "AssimpToLuaConverter.h"
 #include "lua_converter.hpp"
+#include <iostream>
+#include <assimp/cimport.h>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 #include <iomanip>
 #include <fstream>
 #include <chrono>
@@ -15,7 +19,7 @@ int main(int argc, char **argv)
 {
 	ofstream outfile;
 	outfile.open("temp.lua");
-	auto scene = aiImportFile("C:\\Users\\yehos\\Documents\\Assimp\\AssimpToLuaConverter\\animation_with_skeleton.fbx", aiProcessPreset_TargetRealtime_Fast);
+	auto scene = aiImportFile("animation_with_skeleton.fbx", aiProcessPreset_TargetRealtime_Fast);
 	outfile << setprecision(15);
 	outfile << "return ";
 	convert(outfile, scene);
