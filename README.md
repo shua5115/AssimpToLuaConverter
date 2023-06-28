@@ -15,3 +15,6 @@ Binary file from 3D software -> assimp data structures -> lua source code (this 
 Then, after the lua source code is generated,
 load source code from disk -> 
 reformat data to be shader-friendly, load vertex data into love2d meshes, and add nodes to game world
+
+Because of the aforementioned tradeoffs, I have resolved that I shouldn't spend more time on this solution.
+Look out for a fork of love2d with various add-ons, because I am practically forced to do so to achieve the goal of a 3D engine in love2d.
